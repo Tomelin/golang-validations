@@ -25,7 +25,8 @@ func IsDomainAddrValid(domain string) bool {
 	}
 
 	a, err := net.LookupAddr(domain)
-	if err != nil || len(a) == 0 {
+	cname, errName := net.LookupCNAME(domain)
+	if err != nil || len(a) == 0 || errName != nill || len(cname) == 0 {
 		fmt.Println("A")
 		fmt.Println(a)
 		return false
