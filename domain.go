@@ -30,4 +30,6 @@ func IsDomainAddrValid(domain string) bool {
 		fmt.Println(a)
 		return false
 	}
+
+	return true
 }
